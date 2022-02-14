@@ -4,6 +4,9 @@ plugins {
     id 'androidx.navigation.safeargs'
 }
 
+apply plugin: 'kotlin-kapt'
+apply plugin: 'dagger.hilt.android.plugin'
+
 android {
     compileSdk 32
 
@@ -15,6 +18,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 
     buildTypes {
@@ -63,10 +70,12 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     // Gson converters
     implementation 'com.google.code.gson:gson:2.9.0'
-    // Hilt
-    implementation 'androidx.hilt:hilt-*:1.0.0'
+    // Hilt : desactivated for now
+    implementation "com.google.dagger:hilt-android:2.38.1"
+    kapt "com.google.dagger:hilt-compiler:2.38.1"
     //DataStore
     implementation "androidx.datastore:datastore:1.0.0"
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
     implementation "androidx.navigation:navigation-ui-ktx:$nav_version"

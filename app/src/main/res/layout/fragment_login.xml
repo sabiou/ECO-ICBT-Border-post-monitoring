@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/loginn_input_field"
+        android:id="@+id/login_input_field"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
