@@ -7,11 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.sim2g.icbt.R
 import com.sim2g.icbt.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
+
+    companion object {
+        const val LOGIN_SUCCESSFUL: String = "LOGIN_SUCCESSFUL"
+    }
 
     private var _binding: FragmentLoginBinding? = null
     // This property is only valid between onCreateView and
@@ -38,6 +44,7 @@ class LoginFragment : Fragment() {
         val password = binding.passwordField.text.toString()
         if (email.equals("konombo@hotmail.com") && password.equals("admin")) {
             Toast.makeText(context, "Login successfull", Toast.LENGTH_LONG).show()
+            findNavController().navigate(R.id.dashboardFragment)
         }
         else {
             binding.loginField.error = "User not found"

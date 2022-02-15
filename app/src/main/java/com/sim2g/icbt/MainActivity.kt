@@ -3,31 +3,37 @@ package com.sim2g.icbt
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.Toast
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
+import com.sim2g.icbt.databinding.ActivityMainBinding
 import com.sim2g.icbt.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
 
-private lateinit var binding: FragmentLoginBinding
+private lateinit var binding: ActivityMainBinding
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = FragmentLoginBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-
-        binding.loginBtn.setOnClickListener { loginUser() }
         setContentView(view)
-    }
 
-    fun loginUser() {
-        val email = binding.loginField.text.toString()
-        Log.println(Log.INFO, "mail", email)
-        val password = binding.passwordField.text.toString()
-        if (email.equals("konombo@hotmail.com") && password.equals("admin")) {
-            Toast.makeText(applicationContext, "Login successfull", Toast.LENGTH_LONG).show()
-        }
-        else {
-            binding.loginField.error = "User not found"
-            binding.passwordField.error = "User not found"
+        // setup the bottom navigation view
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        binding.bottomNavigation.setupWithNavController(navController)
+
+        // hide the bottom navigation view when in login fragment
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.loginFragment) {
+                binding.bottomNavigation.visibility = View.GONE
+            } else {
+                binding.bottomNavigation.visibility = View.VISIBLE
+            }
         }
     }
 }
