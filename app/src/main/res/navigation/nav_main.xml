@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.sim2g.icbt.ui.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.sim2g.icbt.ui.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+    <fragment
+        android:id="@+id/globalParamsFragment"
+        android:name="com.sim2g.icbt.ui.GlobalParamsFragment"
+        android:label="fragment_global_params"
+        tools:layout="@layout/fragment_global_params" />
+    <fragment
+        android:id="@+id/managementFragment"
+        android:name="com.sim2g.icbt.ui.ManagementFragment"
+        android:label="fragment_management"
+        tools:layout="@layout/fragment_management" />
+</navigation>
