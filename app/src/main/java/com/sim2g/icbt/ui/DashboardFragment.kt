@@ -5,9 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import com.sim2g.icbt.R
+import com.sim2g.icbt.databinding.FragmentDashboardBinding
+import com.sim2g.icbt.ui.viewmodels.DashboardViewModel
 
 class DashboardFragment : Fragment() {
+
+    private val viewModel: DashboardViewModel by lazy {
+        ViewModelProvider(this).get(DashboardViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +25,15 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val binding = FragmentDashboardBinding.inflate(inflater)
+
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        binding.lifecycleOwner = this
+
+        // Giving the binding access to the OverviewViewModel
+        binding.viewModel = viewModel
+
+        // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
+        return binding.root
     }
 }
