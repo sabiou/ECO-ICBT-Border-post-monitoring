@@ -1,11 +1,13 @@
 package com.sim2g.icbt.network
 
+import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.sim2g.icbt.data.model.*
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
 
@@ -15,16 +17,11 @@ import retrofit2.http.*
  * This file contains all endpoints query
  */
 
-private const val BASE_URL = "http://monitoringtls-bakend.net/sim2g/api/"
-
-private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
-    .build()
-
 interface Services {
     // year of evaluation
     @GET("annee/all")
-    fun getAllYears(): Call<List<Annee>>
+    fun getAllYears(): Call<YearOfEvalResponse>
+    //fun getAllYears(): Call<List<Annee>>
 
     @GET("annee/actif")
     fun findAllActiveYears(): Call<List<Annee>>
@@ -186,12 +183,14 @@ interface Services {
 
 }
 
+/*
 object Network {
     // Configure retrofit to parse JSON
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
+        .addConverterFactory(GsonConverterFactory.create(gson))
+        //.addConverterFactory(MoshiConverterFactory.create(moshi))
         .build()
 
     val api: Services = retrofit.create(Services::class.java)
-}
+}*/

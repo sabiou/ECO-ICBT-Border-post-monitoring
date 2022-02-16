@@ -13,7 +13,7 @@ import com.sim2g.icbt.ui.viewmodels.DashboardViewModel
 class DashboardFragment : Fragment() {
 
     private val viewModel: DashboardViewModel by lazy {
-        ViewModelProvider(this).get(DashboardViewModel::class.java)
+        ViewModelProvider(this)[DashboardViewModel::class.java]
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +31,7 @@ class DashboardFragment : Fragment() {
         binding.lifecycleOwner = this
 
         // Giving the binding access to the OverviewViewModel
-        binding.viewModel = viewModel
+        //binding.viewModel = viewModel
 
         // Allows Data Binding to Observe LiveData with the lifecycle of this Fragment
         return binding.root
