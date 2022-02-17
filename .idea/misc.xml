@@ -4,14 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_add_evaluation_year.xml" value="0.1478825136612022" />
         <entry key="app/src/main/res/layout/fragment_dashboard.xml" value="0.1478825136612022" />
         <entry key="app/src/main/res/layout/fragment_global_params.xml" value="0.1478825136612022" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_management.xml" value="0.1478825136612022" />
-        <entry key="app/src/main/res/layout/fragment_year_of_evaluation.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_performance_key.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_year_of_evaluation.xml" value="0.165" />
         <entry key="app/src/main/res/layout/item_year_eval_header.xml" value="0.1478825136612022" />
         <entry key="app/src/main/res/layout/item_year_of_evaluation.xml" value="0.1" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/menu/year_of_evaluation_menu.xml" value="0.16041666666666668" />
       </map>
     </option>
   </component>

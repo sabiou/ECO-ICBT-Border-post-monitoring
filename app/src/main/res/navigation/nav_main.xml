@@ -8,21 +8,39 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.sim2g.icbt.ui.LoginFragment"
-        android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="com.sim2g.icbt.ui.DashboardFragment"
-        android:label="fragment_dashboard"
+        android:label="Dasboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/globalParamsFragment"
         android:name="com.sim2g.icbt.ui.GlobalParamsFragment"
-        android:label="fragment_global_params"
+        android:label="Global Parameters"
         tools:layout="@layout/fragment_global_params" />
     <fragment
         android:id="@+id/managementFragment"
         android:name="com.sim2g.icbt.ui.ManagementFragment"
-        android:label="fragment_management"
+        android:label="Management"
         tools:layout="@layout/fragment_management" />
+    <fragment
+        android:id="@+id/addEvaluationYearFragment"
+        android:name="com.sim2g.icbt.ui.AddEvaluationYearFragment"
+        android:label="Add Evaluation Year"
+        tools:layout="@layout/fragment_add_evaluation_year" />
+    <fragment
+        android:id="@+id/yearOfEvaluationFragment"
+        android:name="com.sim2g.icbt.ui.YearOfEvaluationFragment"
+        android:label="Year Of Evaluation" />
+    <fragment
+        android:id="@+id/performanceKeyFragment"
+        android:name="com.sim2g.icbt.ui.PerformanceKeyFragment"
+        android:label="Performace key"
+        tools:layout="@layout/fragment_performance_key" />
+    <fragment
+        android:id="@+id/borderPostFragment"
+        android:name="com.sim2g.icbt.ui.BorderPostFragment"
+        android:label="Border Post"
+        tools:layout="@layout/fragment_border_post" />
 </navigation>

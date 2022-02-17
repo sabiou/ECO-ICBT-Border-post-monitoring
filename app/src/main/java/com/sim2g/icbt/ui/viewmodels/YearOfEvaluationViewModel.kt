@@ -43,4 +43,27 @@ class YearOfEvaluationViewModel: ViewModel() {
             }
         }
     }
+
+
+    private fun getActiveYears() {
+        viewModelScope.launch {
+            try {
+                val result = Network.api.findAllActiveYears()
+                _years.value = result
+            } catch (e: Exception) {
+                _status.value = "Faillure: ${e.message}"
+            }
+        }
+    }
+
+    private fun getAllInactiveYears() {
+        viewModelScope.launch {
+            try {
+                val result = Network.api.findAllInactiveYears()
+                _years.value = result
+            } catch (e: Exception) {
+                _status.value = "Faillure: ${e.message}"
+            }
+        }
+    }
 }

@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
+import com.sim2g.icbt.R
 import com.sim2g.icbt.databinding.ItemYearEvalHeaderBinding
 
 /**
@@ -30,6 +31,10 @@ class YearEvalHeaderAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind() {
             binding.apply {
+                textYear.text = "Year"
+                textStartDate.text = "Start date"
+                textEndDate.text = "End date"
+                options.text = "Options"
                 executePendingBindings()
             }
         }

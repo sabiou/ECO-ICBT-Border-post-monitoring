@@ -30,7 +30,7 @@ interface Services {
     suspend fun findAllActiveYears(): List<Annee>
 
     @GET("annee/inactif")
-    fun findAllInactiveActiveYears(): Call<List<Annee>>
+    fun findAllInactiveYears(): List<Annee>
 
     @GET("annee/byid/{id}")
     fun findYearById(@Path("id") id: String): Call<Annee>
