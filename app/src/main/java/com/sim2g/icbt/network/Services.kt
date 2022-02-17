@@ -24,10 +24,10 @@ private val moshi = Moshi.Builder()
 interface Services {
     // year of evaluation
     @GET("annee/all")
-    fun getAllYears(): Call<List<Annee>>
+    suspend fun getAllYears(): List<Annee>
 
     @GET("annee/actif")
-    fun findAllActiveYears(): Call<List<Annee>>
+    suspend fun findAllActiveYears(): List<Annee>
 
     @GET("annee/inactif")
     fun findAllInactiveActiveYears(): Call<List<Annee>>
@@ -102,7 +102,8 @@ interface Services {
         @Path("idgroupe") idgroup: String,
         @Path("nationalite") nationalite: String): Call<List<Operateur>>
 
-    @DELETE("iov/delete/{id}")
+    // bug:// request was "iov/delete/{id} instead of operateur/delete/{id}
+    @DELETE("operateur/delete/{id}")
     fun deleteOperateur(@Query("id") id: String)
 
     @POST("operateur/create")
