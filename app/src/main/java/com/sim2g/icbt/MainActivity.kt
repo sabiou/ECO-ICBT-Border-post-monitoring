@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.sim2g.icbt.databinding.ActivityMainBinding
 import com.sim2g.icbt.databinding.FragmentLoginBinding
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
+        //setupActionBarWithNavController(navController)
 
         // hide the bottom navigation view when in login fragment
         navController.addOnDestinationChangedListener { _, destination, _ ->

@@ -15,34 +15,26 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LoginFragment : Fragment() {
 
-    companion object {
-        const val LOGIN_SUCCESSFUL: String = "LOGIN_SUCCESSFUL"
-    }
-
     private var _binding: FragmentLoginBinding? = null
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
         binding.loginBtn.setOnClickListener { loginUser() }
         return binding.root
     }
 
-    fun loginUser() {
+    private fun loginUser() {
         val email = binding.loginField.text.toString()
         Log.println(Log.INFO, "mail", email)
         val password = binding.passwordField.text.toString()
-        if (email.equals("konombo@hotmail.com") && password.equals("admin")) {
+        if (email == "konombo@hotmail.com" && password == "admin") {
             Toast.makeText(context, "Login successfull", Toast.LENGTH_LONG).show()
             findNavController().navigate(R.id.dashboardFragment)
         }

@@ -2,6 +2,7 @@ package com.sim2g.icbt.network
 
 import com.google.gson.GsonBuilder
 import com.sim2g.icbt.data.model.*
+import com.skydoves.sandwich.ApiResponse
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
@@ -22,26 +23,31 @@ private val moshi = Moshi.Builder()
     .build()
 
 interface Services {
-    // year of evaluation
+    /**
+     * CRUD operations on evaluations years
+     */
+    // get a list of all years of evaluation
     @GET("annee/all")
-    fun getAllYears(): Call<List<Annee>>
-
+    suspend fun getAllYears(): ApiResponse<List<Annee>>
+    // get a list of all years of evaluation (active only)
     @GET("annee/actif")
-    fun findAllActiveYears(): Call<List<Annee>>
-
+    suspend fun findAllActiveYears(): List<Annee>
+    // get a list of all years of evaluation (inactive only)
     @GET("annee/inactif")
-    fun findAllInactiveActiveYears(): Call<List<Annee>>
-
+    fun findAllInactiveYears(): List<Annee>
+    // get a specific years of evaluation by it's id
     @GET("annee/byid/{id}")
     fun findYearById(@Path("id") id: String): Call<Annee>
-
+    // add a new year of evaluation
     @POST("annee/create")
-    fun addNewYear(@Body annee: Annee): Call<Annee>
-
+    fun addNewYear(@Body annee: Annee): ApiResponse<Call<Annee>>
+    // delete a given year of evaluation record
     @DELETE("annee/delete/{id}")
     fun deleteYear(@Query("id") id: String)
 
-   // IOV
+   /**
+    * CRUD operations on IOV
+    */
     @GET("iov/actif")
     fun findAllActiveEvaluation(): Call<List<IOV>>
 
@@ -63,7 +69,9 @@ interface Services {
     @POST("iov/create")
     fun addEvaluation(@Body iov: IOV): Call<IOV>
 
-    // Operateur
+    /**
+     * CRUD operations on Operateur
+     */
     @GET("operateur/email/{meloper}")
     fun findOperateurByMeloper(@Path("meloper") meloper: String): Call<Operateur>
 
@@ -102,13 +110,16 @@ interface Services {
         @Path("idgroupe") idgroup: String,
         @Path("nationalite") nationalite: String): Call<List<Operateur>>
 
-    @DELETE("iov/delete/{id}")
+    // bug:// request was "iov/delete/{id} instead of operateur/delete/{id}
+    @DELETE("operateur/delete/{id}")
     fun deleteOperateur(@Query("id") id: String)
 
     @POST("operateur/create")
     fun addOperateur(@Body operateur: Operateur): Call<Operateur>
 
-    // GROUP
+    /**
+     * CRUD operations on Group
+     */
     @GET("groupe/all")
     fun findAllGroup(): Call<List<Groupe>>
 
@@ -124,7 +135,9 @@ interface Services {
     @DELETE("group/delete/{id}")
     fun deleteGroup(@Query("id") id: String)
 
-    // User post
+    /**
+     * CRUD operations on UserPoste
+     */
     @GET("user_post/actif")
     fun findAllActiveUserPost(): Call<List<UserPoste>>
 
@@ -149,7 +162,9 @@ interface Services {
     @GET("user_post/edite/{id}")
     fun editUserPost(@Path("id") id: String): Call<UserPoste>
 
-    // EValiovan
+    /**
+     * CRUD operations on Evaliovan
+     */
     @GET("evaliovan/actif")
     fun findAllActiveEvaliovan(): Call<List<Evaliovan>>
 
@@ -186,12 +201,12 @@ interface Services {
 
 }
 
-object Network {
-    // Configure retrofit to parse JSON
-    private val retrofit = Retrofit.Builder()
-        .baseUrl(BASE_URL)
-        .addConverterFactory(MoshiConverterFactory.create(moshi))
-        .build()
-
-    val api: Services = retrofit.create(Services::class.java)
-}
+//object Network {
+//    // Configure retrofit to parse JSON
+//    private val retrofit = Retrofit.Builder()
+//        .baseUrl(BASE_URL)
+//        .addConverterFactory(MoshiConverterFactory.create(moshi))
+//        .build()
+//
+//    val api: Services = retrofit.create(Services::class.java)
+//}

@@ -9,9 +9,4 @@ import org.junit.Test
  */
 class YearsEndpointTest {
 
-    @Test
-    fun getYears() {
-        val response = Network.api.getAllYears().execute()
-        assertTrue(response.isSuccessful)
-    }
 }
