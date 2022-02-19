@@ -12,7 +12,9 @@ import com.sim2g.icbt.ui.adapters.BORDER_POST
 import com.sim2g.icbt.ui.adapters.GlobalParamsPagerAdapter
 import com.sim2g.icbt.ui.adapters.PERFORMANCE_KEY
 import com.sim2g.icbt.ui.adapters.YEAR_OF_EVALUATION
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class GlobalParamsFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {

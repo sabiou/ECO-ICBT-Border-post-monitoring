@@ -5,40 +5,30 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.recyclerview.widget.ConcatAdapter
 import com.sim2g.icbt.R
 import com.sim2g.icbt.databinding.FragmentYearOfEvaluationBinding
-import com.sim2g.icbt.ui.adapters.YearEvalHeaderAdapter
 import com.sim2g.icbt.ui.adapters.YearsOfEvaluationAdapter
 import com.sim2g.icbt.ui.viewmodels.YearOfEvaluationViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class YearOfEvaluationFragment : Fragment() {
 
     private val viewModel: YearOfEvaluationViewModel by lazy {
         ViewModelProvider(this)[YearOfEvaluationViewModel::class.java]
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentYearOfEvaluationBinding.inflate(inflater)
 
         binding.lifecycleOwner = this
 
         binding.vm = viewModel
 
-        val headerAdapter = YearEvalHeaderAdapter()
-        val yearsAdapter = YearsOfEvaluationAdapter()
-        val concatAdapter = ConcatAdapter(headerAdapter, yearsAdapter)
-
-        binding.rvYofEval.adapter = yearsAdapter
+        binding.adapter = YearsOfEvaluationAdapter()
 
         setHasOptionsMenu(true)
         return binding.root
@@ -48,7 +38,7 @@ class YearOfEvaluationFragment : Fragment() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        inflater.inflate(R.menu.year_of_evaluation_menu, menu);
+        inflater.inflate(R.menu.year_of_evaluation_menu, menu)
         super.onCreateOptionsMenu(menu, inflater)
     }
 

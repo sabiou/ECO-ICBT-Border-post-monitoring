@@ -7,6 +7,9 @@
         <variable
             name="vm"
             type="com.sim2g.icbt.ui.viewmodels.YearOfEvaluationViewModel" />
+        <variable
+            name="adapter"
+            type="com.sim2g.icbt.ui.adapters.YearsOfEvaluationAdapter" />
     </data>
 
     <LinearLayout
@@ -25,18 +28,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <com.google.android.material.chip.Chip
-                android:id="@+id/active_year_chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Active"/>
-
-            <com.google.android.material.chip.Chip
-                android:id="@+id/inactive_year_chip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Inactive"/>
-
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -45,7 +36,8 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="15"
-            app:listData="@{vm.years}"
+            app:adapter="@{adapter}"
+            app:yearsList="@{vm.yearsList}"
             tools:listitem="@layout/item_year_of_evaluation"/>
 
     </LinearLayout>

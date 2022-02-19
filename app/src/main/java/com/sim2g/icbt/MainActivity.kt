@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
-        setupActionBarWithNavController(navController)
+        //setupActionBarWithNavController(navController)
 
         // hide the bottom navigation view when in login fragment
         navController.addOnDestinationChangedListener { _, destination, _ ->
