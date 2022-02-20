@@ -16,15 +16,19 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".ui.OperatorsFragment">
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnUserMgmt"
-            style="@style/Widget.MaterialComponents.Button.TextButton"
-            android:layout_width="wrap_content"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_operators"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="User Management"
-            android:orientation="vertical" />
+            tools:itemCount="10"
+            app:operatorsAdapter="@{adapter}"
+            app:operatorsList="@{viewModel.operatorsList}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_operator"/>
 
     </FrameLayout>
 </layout>

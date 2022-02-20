@@ -1,13 +1,8 @@
 package com.sim2g.icbt.network
 
-import com.google.gson.GsonBuilder
 import com.sim2g.icbt.data.model.*
 import com.skydoves.sandwich.ApiResponse
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Call
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.*
 
 /**
@@ -16,12 +11,7 @@ import retrofit2.http.*
  * This file contains all endpoints query
  */
 
-private const val BASE_URL = "http://monitoringtls-bakend.net/sim2g/api/"
-
-private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
-    .build()
-
+@Suppress("Unused")
 interface Services {
     /**
      * CRUD operations on evaluations years
@@ -76,7 +66,7 @@ interface Services {
     fun findOperateurByMeloper(@Path("meloper") meloper: String): Call<Operateur>
 
     @GET("operateur/all")
-    fun findAllOperateur(): Call<List<Operateur>>
+    suspend fun findAllOperateur(): ApiResponse<List<Operateur>>
 
     @GET("operateur/edite")
     fun editOperateur(@Path("id") id: String): Call<Operateur>

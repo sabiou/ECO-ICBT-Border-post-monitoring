@@ -1,7 +1,12 @@
 package com.sim2g.icbt.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "operators")
 data class Operateur(
-    var id: Int,
+    @PrimaryKey
+    var id: String,
     var datecre: String,
     var datemaj: String,
     var datenaissance: String,

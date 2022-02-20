@@ -43,4 +43,9 @@
         android:name="com.sim2g.icbt.ui.BorderPostFragment"
         android:label="Border Post"
         tools:layout="@layout/fragment_border_post" />
+    <fragment
+        android:id="@+id/operatorsFragment"
+        android:name="com.sim2g.icbt.ui.OperatorsFragment"
+        android:label="Operators"
+        tools:layout="@layout/fragment_operators" />
 </navigation>
