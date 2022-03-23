@@ -1,12 +1,8 @@
 package com.sim2g.icbt
 
-import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.util.AttributeSet
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI

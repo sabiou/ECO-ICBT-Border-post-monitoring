@@ -6,7 +6,6 @@ import androidx.lifecycle.liveData
 import androidx.lifecycle.viewModelScope
 import com.sim2g.icbt.data.model.Operateur
 import com.sim2g.icbt.data.persistence.OperatorDAO
-import com.sim2g.icbt.data.repository.OperatorsRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -14,9 +13,7 @@ import javax.inject.Inject
 /**
  * Created by Farouk Sabiou on 2/27/22.
  */
-class AddEditOperatorViewModel @Inject constructor(
-    private val operatorsRepository: OperatorsRepository, private val operatorDAO: OperatorDAO
-) : ViewModel() {
+class AddEditOperatorViewModel @Inject constructor( private val operatorDAO: OperatorDAO) : ViewModel() {
 
     private var operatorLiveData: LiveData<Operateur>? = null
 

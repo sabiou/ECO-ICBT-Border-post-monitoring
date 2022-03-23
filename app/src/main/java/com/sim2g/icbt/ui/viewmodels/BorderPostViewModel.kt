@@ -30,9 +30,6 @@ class BorderPostViewModel @Inject constructor(
     // The internal MutableLiveData String that stores the most recent response
     private val _borderspost = MutableLiveData<List<BorderPost>>()
 
-    val borderspost: LiveData<List<BorderPost>>
-        get() = _borderspost
-
     private val borderPostsFlow = borderPostRepository.allBorder (
         onSuccess = {}
     )
