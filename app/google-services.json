@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "117364167304",
+    "project_id": "godilabs",
+    "storage_bucket": "godilabs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:117364167304:android:fa418aaf0524f7a3bd053d",
+        "android_client_info": {
+          "package_name": "com.sim2g.icbt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "117364167304-j6sn5947mqq60g643c7bemaldti38eiv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlbVGx7G7lSDm7P0u8gMxp6Kxz5wvRGZ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "117364167304-j6sn5947mqq60g643c7bemaldti38eiv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

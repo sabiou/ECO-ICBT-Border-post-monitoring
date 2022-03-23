@@ -31,12 +31,40 @@ class YearsOfEvaluationRepository @Inject constructor(
             services.getAllYears()
                 // handles the success case when the API request gets a successful response.
                 .suspendOnSuccess {
+                    anneeDAO.insertAllEvaluationYearsList(data)
                     emit(data)
                 }
                 /**
                  * handles error cases when the API request gets an error response.
                  * e.g., internal server error.
-                 * maps the [ApiResponse.Failure.Error] to the [PosterErrorResponse] using the mapper.
+                 */
+                .onError {
+                    // handle the error
+                }
+                // handles exceptional cases when the API request gets an exception response.
+                // e.g., network connection error.
+                .onException {}
+        } else {
+            emit(years)
+        }
+    }.onCompletion { onSuccess() }.flowOn(Dispatchers.IO)
+
+    @WorkerThread
+    fun inactiveYears(
+        onSuccess: () -> Unit,
+    ) = flow {
+        val years: List<Annee> = anneeDAO.getEvaluationYearsList()
+        if (years.isEmpty()) {
+            // request API network request asynchronously.
+            services.getAllYears()
+                // handles the success case when the API request gets a successful response.
+                .suspendOnSuccess {
+                    anneeDAO.insertAllEvaluationYearsList(data)
+                    emit(data)
+                }
+                /**
+                 * handles error cases when the API request gets an error response.
+                 * e.g., internal server error.
                  */
                 .onError {
                     // handle the error
@@ -62,7 +90,6 @@ class YearsOfEvaluationRepository @Inject constructor(
             /**
              * handles error cases when the API request gets an error response.
              * e.g., internal server error.
-             * maps the [ApiResponse.Failure.Error] to the [PosterErrorResponse] using the mapper.
              */
             .onError {
 

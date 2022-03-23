@@ -12,7 +12,7 @@ import com.sim2g.icbt.data.model.Annee
 @Dao
 interface AnneeDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun addEvaluationYearsList(years: List<Annee>)
+    suspend fun insertAllEvaluationYearsList(years: List<Annee>)
 
     @Query("SELECT * FROM evaluation_years WHERE id = :id")
     suspend fun getEvaluationYear(id: String): Annee

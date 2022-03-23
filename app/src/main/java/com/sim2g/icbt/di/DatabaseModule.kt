@@ -1,9 +1,7 @@
 package com.sim2g.icbt.di
 
 import android.content.Context
-import com.sim2g.icbt.data.persistence.AnneeDAO
-import com.sim2g.icbt.data.persistence.AppDatabase
-import com.sim2g.icbt.data.persistence.OperatorDAO
+import com.sim2g.icbt.data.persistence.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -32,5 +30,15 @@ class DatabaseModule {
     @Provides
     fun provideEventsDao(db: AppDatabase): OperatorDAO {
         return db.operatorDao()
+    }
+
+    @Provides
+    fun provideIovDao(db: AppDatabase): IovDAO {
+        return db.iovDao()
+    }
+
+    @Provides
+    fun provideBorderPostsDao(db: AppDatabase): BorderPostDAO {
+        return db.borderPostDao()
     }
 }

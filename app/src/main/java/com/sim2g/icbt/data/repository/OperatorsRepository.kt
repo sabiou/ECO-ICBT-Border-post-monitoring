@@ -31,19 +31,14 @@ class OperatorsRepository @Inject constructor(
             services.findAllOperateur()
                 // handles the success in case when the API request gets a successful response.
                 .suspendOnSuccess {
+                    // insert operators in database for cache purpose
+                    operatorDAO.insertAllOperators(data)
                     emit(data)
-                    Timber.v("here is the data: $data")
+                    //Timber.v("here is the data: $data")
                 }
-                /**
-                 * handles error cases when the API request gets an error response.
-                 * e.g., internal server error.
-                 * maps the [ApiResponse.Failure.Error] to the [PosterErrorResponse] using the mapper.
-                 */
                 .onError {
-
+                    // to handle later
                 }
-                // handles exceptional cases when the API request gets an exception response.
-                // e.g., network connection error.
                 .onException {}
         } else {
             emit(operators)

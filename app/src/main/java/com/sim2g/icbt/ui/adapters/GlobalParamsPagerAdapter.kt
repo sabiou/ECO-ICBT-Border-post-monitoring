@@ -2,9 +2,9 @@ package com.sim2g.icbt.ui.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.sim2g.icbt.ui.BorderPostFragment
-import com.sim2g.icbt.ui.PerformanceKeyFragment
-import com.sim2g.icbt.ui.YearOfEvaluationFragment
+import com.sim2g.icbt.ui.fragments.globalparams.BorderPostFragment
+import com.sim2g.icbt.ui.fragments.globalparams.PerformanceKeyFragment
+import com.sim2g.icbt.ui.fragments.globalparams.YearOfEvaluationFragment
 
 /**
  * Created by Farouk Sabiou on 2/16/22.

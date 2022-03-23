@@ -1,4 +1,4 @@
-package com.sim2g.icbt.ui
+package com.sim2g.icbt.ui.fragments.globalparams
 
 import android.os.Build
 import android.os.Bundle
@@ -15,7 +15,6 @@ class AddEvaluationYearFragment : Fragment() {
 
     private var _binding: FragmentAddEvaluationYearBinding? = null
     // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -27,19 +26,9 @@ class AddEvaluationYearFragment : Fragment() {
         _binding = FragmentAddEvaluationYearBinding.inflate(inflater)
 
         // add new year
-        //binding.btnAddYear.setOnClickListener { saveYear() }
-
+        binding.btnAddYear.setOnClickListener {
+            // to do : add a new year
+        }
         return binding.root
     }
-
-    // save a new year of evaluation record
-//    @RequiresApi(Build.VERSION_CODES.O)
-//    private fun saveYear() {
-//        val inputYear = binding.yearEvalTxtfield.text.toString()
-//        val startDate = "$inputYear-01-01"
-//        val endDate = "$inputYear-12-31"
-//        // add new year
-//        val evalYear = Annee(inputYear, startDate, endDate, inputYear, true)
-//        Network.api.addNewYear(evalYear).execute()
-//    }
 }

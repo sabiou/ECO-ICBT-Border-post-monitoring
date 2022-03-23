@@ -1,8 +1,41 @@
 <resources>
     <string name="app_name">SIM2G ECO-ICBT</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_year">Year</string>
     <string name="add_year">Add year</string>
+    <string name="edit_operator">Edit Operator</string>
+    <string name="delete_operator">Delete operator</string>
+    <string name="add_a_new_record">Add a new record</string>
+    <string name="ref" translatable="false">ref</string>
+    <string name="text_group">Group</string>
+    <string name="text_nationalite">Nationality</string>
+    <string name="text_sex">Sex</string>
+    <string name="text_name">Name</string>
+    <string name="text_password">Password</string>
+    <string name="text_function">Function</string>
+    <string name="text_email">Email</string>
+    <string name="text_phone">Phone Number</string>
+    <string name="text_birth">Birth date</string>
+    <string name="text_custom_post">Affectation to Custom Post</string>
+    <string name="save_operator">Save Operator</string>
+    <string name="text_my_profile">My Profile</string>
     <string name="text_user_management">User Management</string>
+    <string name="text_asign_user">Asign user</string>
+    <string name="text_last_24_hours">Last 24 Hours</string>
+    <string name="text_standards_compliance_plant_regulations">Mutual recognition of standards compliance on plant regulations</string>
+    <string name="text_qualifying_good">Mutual recognition of common list of qualifying goods</string>
+    <string name="text_TDI_availability_good">Availability of Trade Information Desks – TDIs</string>
+    <string name="text_niger" translatable="false">Niger</string>
+    <string name="_15_20" translatable="false">15/20</string>
+    <string name="text_burkina_faso" translatable="false">Burkina Faso</string>
+    <string name="_16_20" translatable="false">16/20</string>
+    <string name="text_senegal" translatable="false">Senegal</string>
+    <string name="_17_20" translatable="false">17/20</string>
+    <string name="text_mali" translatable="false">Mali</string>
+    <string name="_18_20" translatable="false">18/20</string>
+
+    <string name="logout">Log Out</string>
+    <string name="app_description" />
+    <string name="login">Login</string>
+    <string name="country">Country</string>
 </resources>

@@ -3,13 +3,13 @@ package com.sim2g.icbt.ui.viewholders
 import android.view.View
 import com.sim2g.icbt.data.model.Operateur
 import com.sim2g.icbt.databinding.ItemOperatorBinding
-import com.sim2g.icbt.databinding.ItemYearEvalHeaderBinding
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 
 /**
  * Created by Farouk Sabiou on 2/19/22.
  */
-class OperatorViewHolder(private val binding: ItemOperatorBinding) : BaseViewHolder(binding.root) {
+class OperatorViewHolder(private val binding: ItemOperatorBinding)
+    : BaseViewHolder(binding.root) {
 
     private lateinit var operatorItem: Operateur
 
@@ -28,7 +28,7 @@ class OperatorViewHolder(private val binding: ItemOperatorBinding) : BaseViewHol
     }
 
     override fun onClick(p0: View?) {
-        // To handle later
+        // show operator details
     }
 
     override fun onLongClick(p0: View?): Boolean = false

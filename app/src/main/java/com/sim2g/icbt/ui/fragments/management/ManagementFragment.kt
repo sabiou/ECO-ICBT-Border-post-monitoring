@@ -1,4 +1,4 @@
-package com.sim2g.icbt.ui
+package com.sim2g.icbt.ui.fragments.management
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -23,9 +23,11 @@ class ManagementFragment : Fragment() {
     ): View? {
         val binding = FragmentManagementBinding.inflate(inflater)
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
 
         binding.btnUserMgmt.setOnClickListener { navigateToUserMgmt() }
+
+        binding.btnUserProfil.setOnClickListener { navigateToUserProfile() }
 
         return binding.root
 
@@ -34,5 +36,9 @@ class ManagementFragment : Fragment() {
 
     private fun navigateToUserMgmt() {
         findNavController().navigate(R.id.operatorsFragment)
+    }
+
+    private fun navigateToUserProfile() {
+        findNavController().navigate(R.id.currentUserFragment)
     }
 }

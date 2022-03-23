@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SIM2G ECO-ICBT</string>
+    <string name="text_year">Annee</string>
+    <string name="add_year">Ajouter annee</string>
+    <string name="edit_operator">Modif. Operateur</string>
+    <string name="delete_operator">Supr. Operateur</string>
+    <string name="add_a_new_record">Ajouter une eval.</string>
+    <string name="text_group">Groupe</string>
+    <string name="text_nationalite">Nationalite</string>
+    <string name="text_sex">Sexe</string>
+    <string name="text_name">Nom</string>
+    <string name="text_password">Mot de passe</string>
+    <string name="text_function">Fonction</string>
+    <string name="text_email">Email</string>
+    <string name="text_phone">Telephone</string>
+    <string name="text_birth">Date de Naissance</string>
+    <string name="text_custom_post">Affectation</string>
+    <string name="save_operator">Enreg. Operateur</string>
+    <string name="text_my_profile">Mon Profile</string>
+    <string name="text_user_management">Gestion d\'utilisateurs</string>
+    <string name="text_asign_user">Asigner Utilisateur</string>
+    <string name="text_last_24_hours">Dernieres 24 heures</string>
+    <string name="text_standards_compliance_plant_regulations">Mutual recognition of standards compliance on plant regulations</string>
+    <string name="text_qualifying_good">Mutual recognition of common list of qualifying goods</string>
+    <string name="text_TDI_availability_good">Availability of Trade Information Desks – TDIs</string>
+    <string name="logout">Se deconnecter</string>
+    <string name="login">Se connecter</string>
+    <string name="country">Pays</string>
+</resources>

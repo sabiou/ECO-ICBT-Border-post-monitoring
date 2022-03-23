@@ -1,4 +1,4 @@
-package com.sim2g.icbt.ui
+package com.sim2g.icbt.ui.fragments.globalparams
 
 import android.os.Bundle
 import android.view.*
@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.sim2g.icbt.R
 import com.sim2g.icbt.databinding.FragmentYearOfEvaluationBinding
-import com.sim2g.icbt.ui.adapters.YearsOfEvaluationAdapter
+import com.sim2g.icbt.ui.adapters.YearEvalAdapter
 import com.sim2g.icbt.ui.viewmodels.YearOfEvaluationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,11 +24,11 @@ class YearOfEvaluationFragment : Fragment() {
     ): View {
         val binding = FragmentYearOfEvaluationBinding.inflate(inflater)
 
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
 
         binding.vm = viewModel
 
-        binding.adapter = YearsOfEvaluationAdapter()
+        binding.adapter = YearEvalAdapter()
 
         setHasOptionsMenu(true)
         return binding.root

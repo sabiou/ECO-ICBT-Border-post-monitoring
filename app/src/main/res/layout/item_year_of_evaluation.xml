@@ -9,61 +9,69 @@
             type="com.sim2g.icbt.data.model.Annee" />
     </data>
 
-    <LinearLayout
-        android:weightSum="2"
-        android:orientation="vertical"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_year"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:weightSum="4"
-            android:layout_margin="16dp">
+            android:clickable="true"
+            android:focusable="true"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="2020"
+                    android:textStyle="bold"
+                    android:text="@{annee.annee}" />
+
+                <TextView
+                    android:id="@+id/text_start_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="Start date: 2020-01-01"
+                    app:startDate="@{annee.datedebut}"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary" />
+
+                <TextView
+                    android:id="@+id/text_end_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    tools:text="End date: 2020-01-01"
+                    app:endDate="@{annee.datefin}"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="?android:attr/textColorSecondary" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/text_year"
+                android:id="@+id/isActive"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{annee.annee}"
-                android:layout_weight="1"
-                android:textAppearance="?attr/textAppearanceCaption"
-                tools:text="2011" />
+                android:layout_marginEnd="5dp"
+                tools:text="active"
+                app:statusText="@{annee.status}"
+                app:title="@{annee.status}"
+                android:layout_gravity="end|center"/>
 
-            <TextView
-                android:id="@+id/text_start_date"
-                android:text="@{annee.datedebut}"
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?attr/textAppearanceCaption"
-                tools:text="2011-01-01" />
+        </com.google.android.material.card.MaterialCardView>
 
-            <TextView
-                android:id="@+id/text_end_date"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="@{annee.datefin}"
-                android:textAppearance="?attr/textAppearanceCaption"
-                tools:text="2011-12-31" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageView
-                android:id="@+id/options"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:src="@drawable/ic_baseline_more_horiz_24"/>
 
-        </LinearLayout>
 
-        <include
-            layout="@layout/item_divider"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </LinearLayout>
 
 </layout>

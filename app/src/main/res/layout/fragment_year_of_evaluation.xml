@@ -9,7 +9,7 @@
             type="com.sim2g.icbt.ui.viewmodels.YearOfEvaluationViewModel" />
         <variable
             name="adapter"
-            type="com.sim2g.icbt.ui.adapters.YearsOfEvaluationAdapter" />
+            type="com.sim2g.icbt.ui.adapters.YearEvalAdapter" />
     </data>
 
     <LinearLayout
@@ -32,10 +32,11 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_yof_eval"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="15"
+            android:layout_marginTop="48dp"
             app:adapter="@{adapter}"
             app:yearsList="@{vm.yearsList}"
             tools:listitem="@layout/item_year_of_evaluation"/>

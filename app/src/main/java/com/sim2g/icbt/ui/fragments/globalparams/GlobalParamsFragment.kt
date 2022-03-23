@@ -1,4 +1,4 @@
-package com.sim2g.icbt.ui
+package com.sim2g.icbt.ui.fragments.globalparams
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -16,10 +16,6 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class GlobalParamsFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
