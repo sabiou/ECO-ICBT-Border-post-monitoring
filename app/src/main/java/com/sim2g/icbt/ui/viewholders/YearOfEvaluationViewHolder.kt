@@ -2,8 +2,6 @@ package com.sim2g.icbt.ui.viewholders
 
 import android.view.View
 import com.sim2g.icbt.data.model.Annee
-import com.sim2g.icbt.data.model.Operateur
-import com.sim2g.icbt.databinding.ItemOperatorBinding
 import com.sim2g.icbt.databinding.ItemYearOfEvaluationBinding
 import com.skydoves.baserecyclerviewadapter.BaseViewHolder
 
@@ -25,6 +23,7 @@ class YearOfEvaluationViewHolder(
     override fun bindData(data: Any) {
         if (data is Annee) {
             this.yearItem = data
+            binding.year.text = data.annee
             drawItem()
         }
     }

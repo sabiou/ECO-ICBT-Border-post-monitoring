@@ -3,49 +3,102 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_main"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/login">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.sim2g.icbt.ui.LoginFragment"
-        tools:layout="@layout/fragment_login" />
-    <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.sim2g.icbt.ui.DashboardFragment"
+        android:name="com.sim2g.icbt.ui.fragments.dashboard.DashboardFragment"
         android:label="Dasboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/globalParamsFragment"
-        android:name="com.sim2g.icbt.ui.GlobalParamsFragment"
+        android:name="com.sim2g.icbt.ui.fragments.globalparams.GlobalParamsFragment"
         android:label="Global Parameters"
         tools:layout="@layout/fragment_global_params" />
     <fragment
         android:id="@+id/managementFragment"
-        android:name="com.sim2g.icbt.ui.ManagementFragment"
+        android:name="com.sim2g.icbt.ui.fragments.management.ManagementFragment"
         android:label="Management"
-        tools:layout="@layout/fragment_management" />
+        tools:layout="@layout/fragment_management" >
+        <action
+            android:id="@+id/action_managementFragment_to_currentUserFragment"
+            app:destination="@id/currentUserFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addEvaluationYearFragment"
-        android:name="com.sim2g.icbt.ui.AddEvaluationYearFragment"
+        android:name="com.sim2g.icbt.ui.fragments.globalparams.AddEvaluationYearFragment"
         android:label="Add Evaluation Year"
         tools:layout="@layout/fragment_add_evaluation_year" />
     <fragment
         android:id="@+id/yearOfEvaluationFragment"
-        android:name="com.sim2g.icbt.ui.YearOfEvaluationFragment"
-        android:label="Year Of Evaluation" />
+        android:name="com.sim2g.icbt.ui.fragments.globalparams.YearOfEvaluationFragment"
+        android:label="Year Of Evaluation"
+        tools:layout="@layout/fragment_year_of_evaluation"/>
     <fragment
         android:id="@+id/performanceKeyFragment"
-        android:name="com.sim2g.icbt.ui.PerformanceKeyFragment"
+        android:name="com.sim2g.icbt.ui.fragments.globalparams.PerformanceKeyFragment"
         android:label="Performace key"
         tools:layout="@layout/fragment_performance_key" />
     <fragment
         android:id="@+id/borderPostFragment"
-        android:name="com.sim2g.icbt.ui.BorderPostFragment"
+        android:name="com.sim2g.icbt.ui.fragments.globalparams.BorderPostFragment"
         android:label="Border Post"
         tools:layout="@layout/fragment_border_post" />
     <fragment
         android:id="@+id/operatorsFragment"
-        android:name="com.sim2g.icbt.ui.OperatorsFragment"
+        android:name="com.sim2g.icbt.ui.fragments.management.OperatorsFragment"
         android:label="Operators"
-        tools:layout="@layout/fragment_operators" />
+        tools:layout="@layout/fragment_operators" >
+        <action
+            android:id="@+id/action_showOperatorDetails"
+            app:destination="@id/operatorsDetailsFragment"
+            />
+    </fragment>
+
+    <fragment
+        android:id="@+id/operatorsDetailsFragment"
+        android:name="com.sim2g.icbt.ui.fragments.management.OperatorsDetailsFragment"
+        android:label="fragment_operators_details"
+        app:popUpTo="@+id/operatorsFragment"
+        tools:layout="@layout/fragment_operators_details" >
+        <argument
+            android:name="operator"
+            app:argType="com.sim2g.icbt.data.model.Operateur" />
+        <action
+            android:id="@+id/action_operatorsDetailsFragment_to_addEditOperatorFragment"
+            app:destination="@id/addEditOperatorFragment" />
+    </fragment>
+
+    <navigation
+        android:id="@+id/login"
+        app:startDestination="@id/loginFragment">
+        <fragment
+            android:id="@+id/loginFragment"
+            android:name="com.sim2g.icbt.ui.fragments.LoginFragment"
+            android:label="fragment_login"
+            app:popUpToInclusive="true"
+            tools:layout="@layout/fragment_login">
+        </fragment>
+    </navigation>
+
+    <fragment
+        android:id="@+id/addEditOperatorFragment"
+        android:name="com.sim2g.icbt.ui.fragments.management.AddEditOperatorFragment"
+        android:label="AddEditOperatorFragment"
+        tools:layout="@layout/fragment_add_edit_operator">
+
+        <argument
+            android:name="operatorId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/currentUserFragment"
+        android:name="com.sim2g.icbt.ui.fragments.management.currentuser.CurrentUserFragment"
+        android:label="CurrentUserFragment"
+        tools:layout="@layout/fragment_current_user">
+        <action
+            android:id="@+id/action_currentUserFragment_to_login"
+            app:destination="@id/login" />
+    </fragment>
+
 </navigation>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+   <ScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           tools:context=".ui.fragments.globalparams.AddEvaluationYearFragment">
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="2"
+           android:baselineAligned="false">
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_ref"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:hint="@string/ref">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/txt_ref"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="text"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_group"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:hint="@string/text_group">
+
+               <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                   android:id="@+id/txt_group"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:minWidth="48dp"
+                   android:inputType="none"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+       </LinearLayout>
+
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal"
+               android:weightSum="2"
+               android:baselineAligned="false">
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/input_nationalite"
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:hint="@string/text_nationalite">
+
+                   <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                       android:id="@+id/txt_nationalite"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="16dp"
+                       android:minWidth="48dp"
+                       android:inputType="none"
+                       android:minHeight="48dp"
+                       android:textAllCaps="false"
+                       tools:ignore="SpeakableTextPresentCheck" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/input_sex"
+                   style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   android:hint="@string/text_sex">
+
+                   <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                       android:id="@+id/txt_sex"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_margin="16dp"
+                       android:minWidth="48dp"
+                       android:inputType="none"
+                       android:minHeight="48dp"
+                       android:textAllCaps="false"
+                       tools:ignore="SpeakableTextPresentCheck" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+           </LinearLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_name"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/text_name">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/txt_name"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="textPersonName"
+                   android:minWidth="48dp"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_password"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/text_password">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/txt_password"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="textPassword"
+                   android:minWidth="48dp"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:weightSum="2"
+           android:baselineAligned="false">
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_function"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:hint="@string/text_function">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/txt_fonction"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="text"
+                   android:minWidth="48dp"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_email"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:hint="@string/text_email">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/txt_email"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="textEmailAddress"
+                   android:minWidth="48dp"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+       </LinearLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_phone"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/text_phone">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/txt_phone"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="phone"
+                   android:minWidth="48dp"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_birth"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/text_birth">
+
+               <com.google.android.material.textfield.TextInputEditText
+                   android:id="@+id/date_picker"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:inputType="date"
+                   android:minWidth="48dp"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.textfield.TextInputLayout
+               android:id="@+id/input_custom_post"
+               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:hint="@string/text_custom_post">
+
+               <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                   android:id="@+id/txt_affectation"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_margin="16dp"
+                   android:minWidth="48dp"
+                   android:inputType="none"
+                   android:minHeight="48dp"
+                   android:textAllCaps="false"
+                   tools:ignore="SpeakableTextPresentCheck" />
+
+           </com.google.android.material.textfield.TextInputLayout>
+
+           <com.google.android.material.button.MaterialButton
+               android:id="@+id/btn_add_operateur"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_gravity="center"
+               android:minWidth="200dp"
+               android:text="@string/save_operator"
+               android:textAllCaps="false"
+               android:textColor="@android:color/white"
+               tools:ignore="SpeakableTextPresentCheck" />
+       </LinearLayout>
+
+   </ScrollView>
+</layout>

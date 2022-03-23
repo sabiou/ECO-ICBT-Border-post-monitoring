@@ -19,30 +19,35 @@ interface Services {
     // get a list of all years of evaluation
     @GET("annee/all")
     suspend fun getAllYears(): ApiResponse<List<Annee>>
+
     // get a list of all years of evaluation (active only)
     @GET("annee/actif")
     suspend fun findAllActiveYears(): List<Annee>
+
     // get a list of all years of evaluation (inactive only)
     @GET("annee/inactif")
     fun findAllInactiveYears(): List<Annee>
+
     // get a specific years of evaluation by it's id
     @GET("annee/byid/{id}")
     fun findYearById(@Path("id") id: String): Call<Annee>
+
     // add a new year of evaluation
     @POST("annee/create")
     fun addNewYear(@Body annee: Annee): ApiResponse<Call<Annee>>
+
     // delete a given year of evaluation record
     @DELETE("annee/delete/{id}")
     fun deleteYear(@Query("id") id: String)
 
-   /**
-    * CRUD operations on IOV
-    */
+    /**
+     * CRUD operations on IOV
+     */
     @GET("iov/actif")
     fun findAllActiveEvaluation(): Call<List<IOV>>
 
     @GET("iov/all")
-    fun findAllEvaluation(): Call<List<IOV>>
+    suspend fun findAllEvaluation(): ApiResponse<List<IOV>>
 
     @GET("iov/inactif")
     fun findAllInactiveEvaluation(): Call<List<IOV>>
@@ -98,7 +103,8 @@ interface Services {
     @GET("operateur/nationalite/{nationalite}/{idgroupe}")
     fun listOperateurParPaysEtGroupe(
         @Path("idgroupe") idgroup: String,
-        @Path("nationalite") nationalite: String): Call<List<Operateur>>
+        @Path("nationalite") nationalite: String
+    ): Call<List<Operateur>>
 
     // bug:// request was "iov/delete/{id} instead of operateur/delete/{id}
     @DELETE("operateur/delete/{id}")
@@ -159,7 +165,10 @@ interface Services {
     fun findAllActiveEvaliovan(): Call<List<Evaliovan>>
 
     @GET("evaliovan/all")
-    fun findAllEvaliovan(): Call<List<Evaliovan>>
+    suspend fun findAllEvaliovan(): ApiResponse<List<Evaliovan>> // to be changed to Evaliovan
+
+    @GET("evaliovan/all")
+    suspend fun findAllEvalio(): List<Evaliovan> // to be changed to Evaliovan
 
     @GET("evaliovan/inactif")
     fun findAllInactiveEvaliovan(): Call<List<Evaliovan>>
@@ -173,12 +182,13 @@ interface Services {
     @GET("evaliovan/annee_poste/{annee}/{id}")
     fun listEvaliovanParPosteEtAnnee(
         @Path("annee") annnee: Int,
-        @Path("idposte") idposte: String): Call<List<Evaliovan>>
+        @Path("idposte") idposte: String
+    ): Call<List<Evaliovan>>
 
     @GET("evaliovan/idiov/{idiov}/idposte/{idposte}")
     fun listEvaliovanParPosteEtIdiovs(
-        @Path("idiov") idiov: String,
-        @Path("idposte") idposte: String): Call<List<Evaliovan>>
+        @Path("idiov") idiov: String, @Path("idposte") idposte: String
+    ): Call<List<Evaliovan>>
 
     @DELETE("evaliovan/delete/{id}")
     fun deleteEvaliovan(@Query("id") id: String)
@@ -189,14 +199,10 @@ interface Services {
     @GET("evaliovan/edite/{id}")
     fun editEvaliovan(@Path("id") id: String)
 
-}
+    // Border post
+    @GET("poste_douanes_actif/{pays}")
+    fun getBorderPostByCountry(@Path("pays") pays: String): List<BorderPost>
 
-//object Network {
-//    // Configure retrofit to parse JSON
-//    private val retrofit = Retrofit.Builder()
-//        .baseUrl(BASE_URL)
-//        .addConverterFactory(MoshiConverterFactory.create(moshi))
-//        .build()
-//
-//    val api: Services = retrofit.create(Services::class.java)
-//}
+    @GET("poste_douanes_actif/burkina")
+    suspend fun getBorderPosts(): ApiResponse<List<BorderPost>>
+}

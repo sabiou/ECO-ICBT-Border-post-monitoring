@@ -1,15 +1,18 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-    id 'androidx.navigation.safeargs'
+    //id 'androidx.navigation.safeargs.kotlin'
+    id 'kotlin-parcelize'
+    // id 'com.google.gms.google-services'
 }
 
 apply plugin: 'kotlin-kapt'
 apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'androidx.navigation.safeargs.kotlin'
+apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdk 32
-
     defaultConfig {
         applicationId "com.sim2g.icbt"
         minSdk 23
@@ -77,6 +80,13 @@ dependencies {
     // viewpager2
     implementation "androidx.viewpager2:viewpager2:1.0.0"
 
+    // Firebase
+    // BoM for the Firebase platform
+    implementation platform('com.google.firebase:firebase-bom:29.2.1')
+    // dependency for the Firebase Authentication library
+    // When using the BoM, you don't specify versions in Firebase library dependencies
+    implementation 'com.google.firebase:firebase-auth-ktx'
+
     // ViewModel
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     // LiveData
@@ -103,17 +113,23 @@ dependencies {
     implementation "com.squareup.moshi:moshi:1.13.0"
     implementation "com.squareup.moshi:moshi-kotlin:1.13.0"
 
-    // baserecyclerviewadapter
+    // Skydoves
     implementation "com.github.skydoves:baserecyclerviewadapter:1.0.4"
-
-    // sandwich
     implementation "com.github.skydoves:sandwich:1.2.0"
-
-    // what if
     implementation "com.github.skydoves:whatif:1.1.0"
-
-    // bindables
     implementation "com.github.skydoves:bindables:1.0.8"
+    implementation "com.github.skydoves:bundler:1.0.4"
+
+    // AnyChart
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+
+    // Nice spinner
+    implementation 'com.github.arcadefire:nice-spinner:1.4.4'
+
+    // SparkView
+    implementation 'com.robinhood.spark:spark:1.2.0'
 
     // timber
     implementation 'com.jakewharton.timber:timber:5.0.1'

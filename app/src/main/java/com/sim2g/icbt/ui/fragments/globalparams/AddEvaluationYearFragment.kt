@@ -1,4 +1,4 @@
-package com.sim2g.icbt.ui
+package com.sim2g.icbt.ui.fragments.globalparams
 
 import android.os.Build
 import android.os.Bundle
