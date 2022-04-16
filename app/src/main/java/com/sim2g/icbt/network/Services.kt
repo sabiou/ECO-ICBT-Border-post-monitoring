@@ -201,7 +201,10 @@ interface Services {
 
     // Border post
     @GET("poste_douanes_actif/{pays}")
-    fun getBorderPostByCountry(@Path("pays") pays: String): List<BorderPost>
+    suspend fun getBorderPostByCountry(@Path("pays") pays: String): ApiResponse<List<BorderPost>>
+
+    @GET("poste_douanes_actif/{pays}")
+    fun borderPostByCountry(@Path("pays") pays: String): Call<List<BorderPost>>
 
     @GET("poste_douanes_actif/burkina")
     suspend fun getBorderPosts(): ApiResponse<List<BorderPost>>
