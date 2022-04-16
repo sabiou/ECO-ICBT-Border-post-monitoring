@@ -11,6 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.flow.onCompletion
+import timber.log.Timber
 import javax.inject.Inject
 
 /**
@@ -33,7 +34,49 @@ class BorderPostRepository @Inject constructor(
                     // insert operators in database for cache purpose
                     borderPostDAO.insertAllBordersPosts(data)
                     emit(data)
-                    //Timber.v("here is the data: $data")
+                    Timber.v("here is the data: $data")
+                }
+                /**
+                 * handles error cases when the API request gets an error response.
+                 * e.g., internal server error.
+                 */
+                /**
+                 * handles error cases when the API request gets an error response.
+                 * e.g., internal server error.
+                 */
+                /**
+                 * handles error cases when the API request gets an error response.
+                 * e.g., internal server error.
+                 */
+                /**
+                 * handles error cases when the API request gets an error response.
+                 * e.g., internal server error.
+                 */
+                .onError {
+                    // to handle later
+                }
+                // handles exceptional cases when the API request gets an exception response.
+                // e.g., network connection error.
+                .onException {}
+        } else {
+            emit(borders)
+        }
+    }.onCompletion { onSuccess() }.flowOn(Dispatchers.IO)
+
+    fun borderPostsByCountry(
+        country: String,
+        onSuccess: () -> Unit,
+    ) = flow {
+        val borders = borderPostDAO.getAllBorderPosts()
+        if (borders.isEmpty()) {
+            // request API network request asynchronously.
+            services.getBorderPostByCountry(country)
+                // handles the success in case when the API request gets a successful response.
+                .suspendOnSuccess {
+                    // insert operators in database for cache purpose
+                    borderPostDAO.insertAllBordersPosts(data)
+                    emit(data)
+                    Timber.v("here is the data: $data")
                 }
                 /**
                  * handles error cases when the API request gets an error response.

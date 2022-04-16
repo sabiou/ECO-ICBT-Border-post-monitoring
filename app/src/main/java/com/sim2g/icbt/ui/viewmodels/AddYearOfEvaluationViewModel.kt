@@ -6,5 +6,5 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 /**
  * Created by Farouk Sabiou on 2/19/22.
  */
-@HiltViewModel
+
 class AddYearOfEvaluationViewModel : BindingViewModel()

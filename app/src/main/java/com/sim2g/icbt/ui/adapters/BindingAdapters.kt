@@ -80,16 +80,32 @@ fun bindIovList(recyclerView: RecyclerView, list: List<IOV>) {
     adapter.submitList(list)
 }
 
-//@BindingAdapter("borderPostsList")
-//fun bindBorderPostsList(recyclerView: RecyclerView, list: List<BorderPost>) {
-//    val adapter = recyclerView.adapter as BorderPostAdapter
-//    adapter.submitList(list)
-//}
-//
-//@BindingAdapter("bordersAdapter")
-//fun bindBorderPostAdapter(view: RecyclerView, adapter: BorderPostAdapter) {
-//    view.adapter = adapter
-//}
+@BindingAdapter("borderPostsList")
+fun bindBorderPostsList(recyclerView: RecyclerView, list: List<BorderPost>?) {
+    val adapter = recyclerView.adapter as BorderPostAdapter
+    adapter.submitList(list)
+    adapter.notifyDataSetChanged()
+}
+
+@BindingAdapter("bordersAdapter")
+fun bindBorderPostAdapter(view: RecyclerView, adapter: BorderPostAdapter) {
+    view.adapter = adapter
+}
+
+@BindingAdapter("postJuxt")
+fun bindPostJuxt(view: TextView, text: String) {
+    "Post Juxt: $text".also { view.text = it }
+}
+
+@BindingAdapter("coordX")
+fun bindPostCoordX(view: TextView, text: String) {
+    "CoordX: $text".also { view.text = it }
+}
+
+@BindingAdapter("coordY")
+fun bindPostCoordY(view: TextView, text: String) {
+    "CoordY: $text".also { view.text = it }
+}
 
 @BindingAdapter("periodicite")
 fun bindIovPeriodicite(view: TextView, text: String) {

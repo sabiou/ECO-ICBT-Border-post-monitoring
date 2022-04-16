@@ -5,11 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="vm"
             type="com.sim2g.icbt.ui.viewmodels.BorderPostViewModel" />
-
         <variable
             name="adapter"
             type="com.sim2g.icbt.ui.adapters.BorderPostAdapter" />
@@ -37,6 +35,8 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="15"
+            app:bordersAdapter="@{adapter}"
+            app:borderPostsList="@{vm.bordersPosts}"
             tools:listitem="@layout/item_border_post" />
     </LinearLayout>
 

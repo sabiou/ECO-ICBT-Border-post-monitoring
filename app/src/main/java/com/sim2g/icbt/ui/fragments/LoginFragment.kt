@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import android.widget.Toast.makeText
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -76,7 +77,7 @@ class LoginFragment : Fragment() {
             val password = binding.passwordField.text.toString().trim()
             viewModel.loginUser(email, password)
         } catch (e: IllegalArgumentException) {
-            Toast.makeText(
+            makeText(
                 context, "Field must not be empty.", Toast.LENGTH_SHORT
             ).show()
         }

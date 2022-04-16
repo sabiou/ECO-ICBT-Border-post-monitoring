@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -38,6 +38,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         tools:text="YARTENGA"
+                        android:textColor="@color/green_500"
                         android:text="@{borderPost.posteName}"
                         android:textStyle="bold"/>
 
@@ -47,7 +48,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         tools:text="Post Juxt: NO"
-                        android:text="@{borderPost.postejuxt}"
+                        app:postJuxt="@{String.valueOf(borderPost.postejuxt)}"
                         android:textAppearance="?attr/textAppearanceBody2"
                         android:textColor="?android:attr/textColorSecondary" />
 
@@ -63,12 +64,28 @@
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/coordxy"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end|center"
-                    tools:text="Coordx: 0.854 / coordy: 12.254"/>
+                    android:orientation="vertical"
+                    android:layout_gravity="end|center">
+
+                    <TextView
+                        android:id="@+id/coordx"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:coordX="@{borderPost.coordx}"
+                        tools:text="Coordx: 0.854"/>
+
+                    <TextView
+                        android:id="@+id/coordy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:coordY="@{borderPost.coordy}"
+                        tools:text="Coordy: 12.254"/>
+
+
+                </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
