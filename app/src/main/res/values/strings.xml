@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SIM2G ECO-ICBT</string>
+    <string name="app_name">ECO-ICBT : Border post monitoring</string>
 
     <string name="text_year">Year</string>
     <string name="add_year">Add year</string>
@@ -35,7 +35,7 @@
     <string name="_18_20" translatable="false">18/20</string>
 
     <string name="logout">Log Out</string>
-    <string name="app_description" />
+    <string name="app_description" translatable="false" />
     <string name="login">Login</string>
     <string name="country">Country</string>
 </resources>

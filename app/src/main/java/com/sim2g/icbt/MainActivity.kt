@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.google.firebase.auth.FirebaseAuth
 import com.sim2g.icbt.databinding.ActivityMainBinding
 import com.sim2g.icbt.extensions.gone
 import com.sim2g.icbt.extensions.visible
@@ -13,6 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 private lateinit var binding: ActivityMainBinding
+private lateinit var auth: FirebaseAuth
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -26,10 +28,11 @@ class MainActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-
-//        if (sharedPreferences.getBoolean("loggedIn", false)) {
-//            moveToMainScreen()
-//        }
+        // if the user is logged in, redirect him to main screen
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            moveToMainScreen()
+        }
 
         // setup the bottom navigation view
         val navHostFragment =
