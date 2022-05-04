@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SIM2G ECO-ICBT</string>
+    <string name="app_name">ECO-ICBT : Border post monitoring</string>
     <string name="text_year">Annee</string>
     <string name="add_year">Ajouter annee</string>
     <string name="edit_operator">Modif. Operateur</string>
